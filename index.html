@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>May Pattern Studio | Hand Pattern Making & Grading · DTLA</title>
+
+  <meta name="description"
+        content="May Pattern Studio provides accurate hand pattern making and grading in Downtown Los Angeles. 30+ years of experience for brands that need production-ready patterns." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="May Pattern Studio | Hand Pattern Making & Grading · DTLA" />
+  <meta property="og:description" content="Accurate hand pattern making and grading for clothing brands. 30+ years of experience in the DTLA Fashion District." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg-alt: #050608;
+      --bg-soft: #101621;
+      --accent: #cf9c4a;
+      --accent-soft: rgba(207,156,74,0.12);
+      --accent-strong: #e7b964;
+      --text: #f5f5f5;
+      --text-muted: #cbd5f5;
+      --border: #262b35;
+      --max-width: 1040px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.6);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, rgba(207,156,74,0.22) 0, #000000 55%, #000000 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { color: var(--accent-strong); }
+
+    section {
+      padding: 64px 18px;
+      display: flex;
+      justify-content: center;
+    }
+
+    main { display: block; }
+
+    .inner {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", "Georgia", serif;
+      letter-spacing: -0.03em;
+      margin: 0 0 16px;
+      color: #f9fafb;
+    }
+
+    h1 { font-size: clamp(2.3rem, 6.5vw, 3.3rem); line-height: 1.1; }
+    h2 { font-size: clamp(1.75rem, 4.5vw, 2.25rem); line-height: 1.18; }
+    h3 { font-size: 1.25rem; }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+      padding: 10px 16px;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.6), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.12);
+    }
+
+    .site-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand {
+      font-family: "Playfair Display", "Georgia", serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f9fafb;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+    .nav-links a { color: #e5e7eb; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+      background: rgba(0,0,0,0.6);
+    }
+    .nav-cta:hover {
+      background: var(--accent);
+      color: #020617;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+    }
+    .btn-primary:hover {
+      background: var(--accent-strong);
+      border-color: var(--accent-strong);
+      color: #020617;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--accent);
+    }
+    .btn-ghost:hover { background: var(--accent-soft); }
+
+    /* HERO */
+    .hero {
+      min-height: 88vh;
+      padding-top: 110px;
+      padding-bottom: 72px;
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .hero-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-strong);
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #e5e7eb;
+      max-width: 34rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero-note {
+      font-size: 0.9rem;
+      color: #c4b5a0;
+      letter-spacing: 0.02em;
+    }
+
+    /* ABOUT */
+    .about {
+      background: radial-gradient(circle at top, rgba(207,156,74,0.12) 0, #050608 55%, #000000 100%);
+    }
+
+    .about-inner {
+      max-width: 700px;
+    }
+
+    .about-inner p { font-size: 0.98rem; }
+
+    /* SERVICES */
+    .services {
+      background: #050608;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .services-header p {
+      max-width: 480px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      padding: 28px 24px;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(207,156,74,0.45);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.55);
+      transform: translateY(-2px);
+    }
+
+    .service-card h3 {
+      font-size: 1.22rem;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: var(--text-muted);
+    }
+
+    .service-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 1px solid rgba(207,156,74,0.4);
+      background: rgba(207,156,74,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 1rem;
+      color: var(--accent-strong);
+    }
+
+    /* PROCESS */
+    .process {
+      background: radial-gradient(circle at top, rgba(207,156,74,0.1) 0, #020617 60%, #000000 100%);
+    }
+
+    .process-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 22px 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--accent);
+      background: rgba(207,156,74,0.15);
+      color: var(--accent-strong);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .step-body p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(207,156,74,0.18) 0, #020617 70%);
+      padding-bottom: 72px;
+    }
+
+    .contact-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .contact p {
+      max-width: 420px;
+      margin: 0 auto 18px;
+      font-size: 0.95rem;
+    }
+
+    .contact-phone {
+      display: inline-block;
+      font-family: "Playfair Display", "Georgia", serif;
+      font-size: clamp(1.75rem, 5vw, 2.4rem);
+      color: #f9fafb;
+      margin: 14px 0 6px;
+      letter-spacing: 0.02em;
+    }
+    .contact-phone:hover {
+      color: var(--accent-strong);
+    }
+
+    .contact-label {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 26px;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      padding: 16px 18px 22px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #6b7280;
+      border-top: 1px solid rgba(31,41,55,0.9);
+      background: #000;
+    }
+
+    /* MOBILE CALL BAR */
+    .mobile-call-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 30;
+      padding: 10px 16px 12px;
+      background: radial-gradient(circle at top, rgba(207,156,74,0.15) 0, #020617 70%);
+      border-top: 1px solid rgba(148,163,184,0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile-call-bar-inner {
+      max-width: var(--max-width);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .mobile-call-text {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .mobile-call-btn {
+      flex-shrink: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 640px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+      .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 720px) {
+      section { padding: 80px 24px; }
+      .hero { padding-top: 120px; padding-bottom: 80px; }
+      .mobile-call-bar { display: none; }
+    }
+
+    @media (min-width: 900px) {
+      .site-header { padding: 12px 24px; }
+      .nav-links { display: flex; }
+
+      .services-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 719px) {
+      body { padding-bottom: 72px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="brand">May Pattern Studio</div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="tel:+12133086016" class="nav-cta">Call Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="inner">
+        <div class="hero-content">
+          <div class="hero-kicker">Hand Pattern Making &amp; Grading · DTLA</div>
+          <h1 id="hero-heading">Accurate patterns.<br>Hand-made with care.</h1>
+          <p class="hero-sub">
+            May Pattern Studio creates precise, production-ready patterns for clothing brands and manufacturers. Hand-drafted work with over 30 years of experience — so your garments fit the way they should.
+          </p>
+          <div class="hero-buttons">
+            <a href="tel:+12133086016" class="btn btn-primary">Call (213) 308-6016</a>
+            <a href="#services" class="btn btn-ghost">View Services</a>
+          </div>
+          <p class="hero-note">
+            30+ years of pattern making · Family-owned · DTLA
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="inner about-inner">
+        <div class="eyebrow">Experience that shows</div>
+        <h2 id="about-heading">30+ years of hand pattern making.</h2>
+        <p>
+          Accuracy is what matters most. Patterns that fit cleanly, grade consistently, and move smoothly into production. Hand drafting gives the control needed to get those details right.
+        </p>
+        <p>
+          May has spent more than three decades refining this craft. Her work has consistently been valued at the higher end of the market because the patterns hold up — in samples, in grading, and on the factory floor.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="inner">
+        <header class="services-header">
+          <div class="eyebrow">What we offer</div>
+          <h2 id="services-heading">Services</h2>
+          <p>
+            Professional pattern support for apparel — from first draft to graded sizes ready for production.
+          </p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Hand Pattern Making</h3>
+            <p>
+              Custom patterns drafted by hand from your sketches, samples, or specs. Built for correct fit, balance, and clean construction that factories can follow.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Pattern Grading</h3>
+            <p>
+              Reliable size grading across your range while keeping proportions and style intact — so every size performs the way the sample did.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Fit &amp; Sample Adjustments</h3>
+            <p>
+              Pattern corrections based on fit sessions or sample feedback. Small refinements that prevent larger problems later in production.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process" aria-labelledby="process-heading">
+      <div class="inner">
+        <header class="process-header">
+          <div class="eyebrow">Simple process</div>
+          <h2 id="process-heading">How it works</h2>
+        </header>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Share your project</h3>
+              <p>Send sketches, a sample, measurements, or size needs. We’ll confirm scope and timing.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Hand pattern work</h3>
+              <p>Patterns are drafted or graded carefully by hand, with attention to fit and construction.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Receive ready patterns</h3>
+              <p>You get clean, usable patterns ready for sampling or production.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="inner contact-inner">
+        <div class="eyebrow">Get started</div>
+        <h2 id="contact-heading">Ready to talk about your next pattern?</h2>
+        <p>
+          Call to discuss pattern making, grading, or fit work. Clear communication and careful hand work for brands that need accuracy.
+        </p>
+        <a href="tel:+12133086016" class="contact-phone">(213) 308-6016</a>
+        <p class="contact-label">May Pattern Studio · 30+ years · Downtown Los Angeles</p>
+        <a href="tel:+12133086016" class="btn btn-primary">Call Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    May Pattern Studio · Hand Pattern Making &amp; Grading · DTLA
+  </footer>
+
+  <!-- MOBILE FLOATING CALL BAR -->
+  <div class="mobile-call-bar">
+    <div class="mobile-call-bar-inner">
+      <div class="mobile-call-text">Need accurate patterns?</div>
+      <a href="tel:+12133086016" class="btn btn-primary mobile-call-btn">Call (213) 308-6016</a>
+    </div>
+  </div>
+</body>
+</html>
